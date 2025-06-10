@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Form</title>
+</head>
+<body>
+    <form class="form" action="{{ url_for('calcular') }}" method="post">
+        <label style="font-weight: bold; font-size: 20px; color: #800080; margin-top: 20px;" for="">CALCULAR JUROS COMPOSTOS</label>
+        <div class="grid">
+            <div class="campos">
+                <label for="">Valor Inicial</label>
+                <input name="inicial" type="text">
+            </div>
+            <div class="campos">
+                <label for="">Meses</label>
+                <input name="meses" type="text">
+            </div>
+            <div class="campos">
+                <label for="">Aportes Mensais</label>
+                <input name="aportes" type="text">
+            </div>
+            <div class="campos">
+                <label for="">Juros</label>
+                <input name="juros" type="text">
+            </div>
+        </div>
+        <button>Calcular</button>
+    </form>
+    {% if result %}
+        <div class="result">
+            <h3>Valor investido: {{ result['total_investido'] }}</h3>
+            <h3>Total: {{ result['total'] }}</h3>
+            <h3>Valor Juros: {{ result['valor_juros'] }}</h3>
+        </div> 
+    {% endif %}    
+</body>
+</html>
