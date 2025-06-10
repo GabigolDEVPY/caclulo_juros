@@ -27,7 +27,7 @@ def calcular():
     result = calcular_juros(float(dados['inicial']), int(dados['meses']), float(dados['aportes']), float(dados['juros']))
     return render_template("users.html", result=result)
 
-@app.route("/users", methods=["GET"])
+@app.route("/", methods=["GET"])
 def return_users():
     return render_template("users.html")
 
